@@ -3,7 +3,11 @@
 public class Main {
     public static void main(String[] args) {
 
-        System.out.printf("Simple Search Engine");
+        Book myBook = new Book("The Great Gatsby","F.Scott Fitzgerald","1925");
+        System.out.println(myBook);
+
+
+
 
 
     }
