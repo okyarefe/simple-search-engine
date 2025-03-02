@@ -1,14 +1,21 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-
-        Book myBook = new Book("The Great Gatsby","F.Scott Fitzgerald","1925");
-        System.out.println(myBook);
 
 
-
+    public static void main(String[] args) throws FileNotFoundException {
+        Library library = new Library();
+        library.loadBooks("src/resources/data/books.txt");
+        library.viewAllBooks();
 
 
     }
+
+
 }
