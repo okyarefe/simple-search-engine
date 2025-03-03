@@ -11,8 +11,10 @@ public class Main {
 
         Library library = new Library();
         library.loadBooks("src/resources/data/books.txt");
+        LibraryMenu libraryMenu = new LibraryMenu(library);
+        libraryMenu.displayMenu();
 
-
+        /*
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter a keyword to search(title, author, or year): ");
         String keyword = scan.nextLine();
@@ -22,6 +24,8 @@ public class Main {
         }else{
             System.out.println("No book matching the criteria");
         }
+
+         */
 
 
         /*
