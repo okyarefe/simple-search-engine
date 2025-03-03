@@ -3,13 +3,15 @@ import org.w3c.dom.stylesheets.LinkStyle;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 
 public class Library {
     private List<Book> books = new ArrayList<>();
+    private Map<Integer,List<Book>> booksByYear = new HashMap<>();
 
     public void loadBooks(String fileName){
         try {
@@ -41,5 +43,37 @@ public class Library {
 
     private void addBook(Book newBook){
         books.add(newBook);
+        booksByYear.computeIfAbsent(newBook.getPublicationYear(), k -> new ArrayList<>()).add(newBook);
+    }
+
+    public List<Book> searchBookByKeyword(String keyword){
+        try {
+            int year = Integer.parseInt(keyword.trim());
+            return searchByPublicationYear(year);
+
+        }catch (Exception e){
+            return linearSearch(keyword);
+        }
+    }
+
+    public Map<Integer,List<Book>> getBooksByYear(){
+        return booksByYear;
+    }
+
+    public List<Book> linearSearch(String keyword){
+        List<Book> booksfound = new ArrayList<>();
+        String sanitizedKeyword = keyword.toLowerCase().trim();
+        for(Book book : books){
+            if(book.getAuthor().toLowerCase().contains(sanitizedKeyword) || book.getTitle().toLowerCase().contains(sanitizedKeyword) || String.valueOf(book.getPublicationYear()).equals(sanitizedKeyword)){
+                booksfound.add(book);
+                return  booksfound;
+            }
+        }
+        return null;
+    }
+
+    private List<Book> searchByPublicationYear(int publicationYear){
+
+        return booksByYear.get(publicationYear);
     }
 }

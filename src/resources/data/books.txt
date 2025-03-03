@@ -16,3 +16,10 @@ Fahrenheit 451,Ray Bradbury,1953
 Don Quixote,Miguel de Cervantes,1605
 One Hundred Years of Solitude,Gabriel García Márquez,1967
 The Grapes of Wrath,John Steinbeck,1939
+The Old Man and the Sea,Ernest Hemingway,1951
+The Hobbit,J.R.R. Tolkien,1954
+The Stranger,Albert Camus,1949
+Anna Karenina,Leo Tolstoy,1869
+The Idiot,Fyodor Dostoevsky,1866
+The Trial,Franz Kafka,1925
+The Metamorphosis,Franz Kafka,1925
