@@ -1,3 +1,5 @@
+import org.w3c.dom.stylesheets.LinkStyle;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -31,6 +33,10 @@ public class Library {
         for(Book book : books){
             System.out.println(book);
         }
+    }
+
+    public List<Book> getBooks(){
+        return  books;
     }
 
     private void addBook(Book newBook){
